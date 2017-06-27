@@ -139,5 +139,33 @@ $topbar-responsive-animation-type: fade-in; // or use slide-down or none
   }
 }
 
+// Sign up SCSS
+form {
+  .form-icons {
+    text-align: center;
+
+    h4 {
+      margin-bottom: 1rem;
+    }
+
+    .input-group-label {
+      background-color: $primary-color;
+      border-color: $primary-color;
+    }
+
+    .input-group-field {
+      border-color: $primary-color;
+    }
+
+    .fa {
+      color: white;
+      width: 1rem; // makes the width of icon labels equal
+    }
+  }
+}
+
+
+
+
 
 
