@@ -7,6 +7,16 @@
 
 $hero-height: 60vh;
 
+.post {
+  padding: 10px;
+  margin: 10px;
+  background-color: rgba(0,0,0,.02)
+}
+
+.center {
+  text-align: center;
+}
+
 .hero-section {
   background: url('https://s3-us-west-2.amazonaws.com/artifactuprising/magento/landing-pages/2016-02-16-wander-this-way/2016-02-16-wander-this-way-01.jpg') 50% no-repeat;
   background-size: cover;
