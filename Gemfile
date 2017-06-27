@@ -57,3 +57,4 @@ gem 'foundation-rails'
 
 gem 'sass', '~> 3.4', '>= 3.4.22'
 gem 'jquery-rails', '~> 4.3', '>= 4.3.1'
+gem 'devise'
