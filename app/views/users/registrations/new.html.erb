@@ -1,38 +1,44 @@
 <h2>Sign up</h2>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name), auto_labels: false) do |f| %>
   <%= devise_error_messages! %>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
+  <div class="input-group">
+    <span class="input-group-label">
+      <i class="fa fa-envelope"></i>
+    </span>
+    <%= f.email_field :email, autofocus: true, class: "input-group-field", placeholder: "email" %>
   </div>
-
-   <div class="field">
-    <%= f.label :full_name %><br />
-    <%= f.text_field :full_name, autofocus: true %>
+  <div class="input-group">
+    <span class="input-group-label">
+      <i class="fa fa-user"></i>
+    </span>
+    <%= f.text_field :full_name, autofocus: true, class: "input-group-field", placeholder: "Enter full name" %>
   </div>
-
-   <div class="field">
-    <%= f.label :current_city %><br />
-    <%= f.text_field :current_city, autofocus: true %>
+  <div class="input-group">
+    <span class="input-group-label">
+      <i class="fa fa-envelope"></i>
+    </span>
+    <%= f.text_field :current_city, autofocus: true, class: "input-group-field", placeholder: "Enter current city" %>
   </div>
-
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
+      <% if @minimum_password_length %>
     <em>(<%= @minimum_password_length %> characters minimum)</em>
     <% end %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
+  <div class="input-group">
+    <span class="input-group-label">
+      <i class="fa fa-key"></i>
+    </span>
+    <%= f.password_field :password, autocomplete: "off", class: "input-group-field", placeholder: "Enter password" %>
   </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
+  <div class="input-group">
+    <span class="input-group-label">
+      <i class="fa fa-envelope"></i>
+    </span>
+    <%= f.password_field :password_confirmation, autocomplete: "off", class: "input-group-field", placeholder: "re-enter password" %>
   </div>
 
   <div class="actions">
-    <%= f.submit "Sign up" %>
+    <%= f.submit "Sign up", class: "button expanded" %>
   </div>
 <% end %>
 
