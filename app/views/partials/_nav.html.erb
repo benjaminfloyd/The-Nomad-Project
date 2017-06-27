@@ -1,0 +1,25 @@
+<nav class="top-bar topbar-responsive">
+  <div class="top-bar-title">
+    <span data-responsive-toggle="topbar-responsive" data-hide-for="medium">
+      <button class="menu-icon" type="button" data-toggle></button>
+    </span>
+    <a class="topbar-responsive-logo" href="#"><strong>Nomad</strong></a>
+  </div>
+  <div id="topbar-responsive" class="topbar-responsive-links">
+    <div class="top-bar-right">
+      <ul class="menu simple vertical medium-horizontal">
+         <li><%= link_to "Home", root_path %></li>
+        <% if user_signed_in? %>
+        <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
+        <li class='current-user'>Logged in as <strong><%= current_user.full_name %></strong>
+        <% else %>
+        <li><%= link_to "Sign Up", new_user_registration_path %></li>
+        <li><%= link_to "Log In", new_user_session_path %></li>
+        <% end %>
+        <%#<li>
+          <button type="button" class="button hollow topbar-responsive-button">Cities</button>
+        </li>%>
+      </ul>
+    </div>
+  </div>
+</nav>

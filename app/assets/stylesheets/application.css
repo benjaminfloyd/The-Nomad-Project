@@ -18,6 +18,10 @@
 
 
  */
-.quote {
-    font-size: 30;
+.current-user {
+    color: rgba(255,255,255,.7)
+}
+
+.top-bar-right {
+    margin-top: 15px;
 }
