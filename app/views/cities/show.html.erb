@@ -1,5 +1,8 @@
 
-<h1 class='center'>The City of <%= @city.name %>, <%= @city.state %></h1>
+<div class='city-header'>
+<h1 class='center, city-name'>The City of <%= @city.name %>, <%= @city.state %></h1>
+<h3 class = 'new-post-button'><%= link_to 'New Post', new_city_post_path(@city), class: 'button' %></h3>
+</div>
 <div>
 <%= image_tag @city.image %>
 </div>

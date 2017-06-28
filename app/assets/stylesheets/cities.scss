@@ -23,6 +23,31 @@ $hero-height: 60vh;
   font-size: 75px;
   padding: 0;
 }
+
+.new-post-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 0px;
+}
+
+.new-post-button .button {
+  margin: 0;
+}
+
+.city-name {
+    display: flex;
+    margin: 0px;
+    justify-content: center;
+    align-items: center;
+}
+
+.city-header {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 20px;
+}
+
 .hero-section {
   background: url('https://s3-us-west-2.amazonaws.com/artifactuprising/magento/landing-pages/2016-02-16-wander-this-way/2016-02-16-wander-this-way-01.jpg') 50% no-repeat;
   background-size: cover;
