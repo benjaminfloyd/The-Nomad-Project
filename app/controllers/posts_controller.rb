@@ -28,7 +28,7 @@ class PostsController < ApplicationController
    @city = City.find(params[:city_id])
    @post = Post.find(params[:id])
    @post.update(post_params)
-   redirect_to city_path(@city)
+   redirect_to city_post_path(@post)
   end
   
   def destroy
@@ -47,3 +47,8 @@ private
   end
 
 end
+
+#  def self.listing(page)
+#     order(created_at: :desc).page(params[:page]).per(20)
+#   end
+# end

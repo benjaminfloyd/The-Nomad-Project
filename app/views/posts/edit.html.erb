@@ -9,5 +9,4 @@
 
 <% end %>
 
-<%= button_to 'post_destroy', [@city, @post], confirm: 'Are you sure?', :disable_with => 'deleting...', method: :delete %>
-
+<%= button_to 'Delete Post', [@city, @post], class: 'alert button', method: :delete, data: { confirm: "About to delete #{@post.title}! Are you sure you want to do this?" } %>
