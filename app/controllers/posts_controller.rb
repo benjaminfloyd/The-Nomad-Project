@@ -12,7 +12,6 @@ class PostsController < ApplicationController
   def create
     @city = City.find(params[:city_id])
     @post = Post.create(post_params)
-    puts @post
       redirect_to city_path(@city)
   end
 
@@ -20,15 +19,17 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
   end
 
-#   def edit
-#      @film = Film.find(params[:id])
-#   end
+  def edit
+     @city = City.find(params[:city_id])
+     @post = Post.find(params[:id])
+  end
 
-#   def update
-#    @film = Film.find(params[:id])
-#    @film.update(film_params)
-#    redirect_to "/films/#{@film.id}"
-#   end
+  def update
+   @city = City.find(params[:city_id])
+   @post = Post.find(params[:id])
+   @post.update(post_params)
+   redirect_to city_path(@city)
+  end
   
 #   def delete
 #     @film = Film.find(params[:id])
