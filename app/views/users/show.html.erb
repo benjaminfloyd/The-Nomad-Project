@@ -1,6 +1,11 @@
-<div class = "username">
+<div class = "user">
 <h1><%= current_user.full_name %></h1>
-<h2><%= current_user.email %></h2>
-<h3><%= current_user.current_city %></h3>
-<button type="button">Edit {{user.full_name}}!</button>
+<h2>Email: <%= current_user.email %></h2>
+<h3>City: <%= current_user.current_city %></h3>
 </div>
+<div class = "posts">
+
+</div>
+
+<button type="button">Edit <%= current_user.full_name%></button>
+<button type="button">Delete <%= current_user.full_name%></button>
