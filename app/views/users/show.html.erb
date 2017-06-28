@@ -5,7 +5,18 @@
 </div>
 <div class = "posts">
 
+<% current_user.posts.each do |post|%>
+<div class="card, center, post" style="width: 300px;">
+  <div class="card-section">
+      <p><%= post.title %></p>
+        <br>
+        <p><%= image_tag post.img %></p>
+        <br>
+        <p><%= post.post %></p>
+  </div>
+</div>
+<% end %>
+
 </div>
 
-<button type="button">Edit <%= current_user.full_name%></button>
-<button type="button">Delete <%= current_user.full_name%></button>
+<h4 class = 'edit-user-button'><%= link_to 'Edit User', edit_user_registration_path(@current_user), class: 'button' %></h4>
