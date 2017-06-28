@@ -1,3 +1,18 @@
-cities = City.create([{ name: 'Atlanta', state: 'Georgia', image: 'http://i.huffpost.com/gen/1716876/images/o-ATLANTA-TRAFFIC-facebook.jpg' }])
-post = cities.create([{img: 'http://i.cdn.turner.com/cnn/2011/SHOWBIZ/celebrity.news.gossip/09/15/ti.halfway.house/t1larg.ti4.gi.jpg', user_id:' ', city_id: ' ',post: '
-I’m happy to be on a winning team. My individual success, that lasts for a short period of time. The success of being a part of the South, of Atlanta, which is now the hot bed of music, that’s what’s gonna last the longest. The fact that I contributed to planting our flag and moving music to my city, that’s what I’m most proud of.'}])
+
+City.create([
+    { name: 'Atlanta',
+     state: 'Georgia', 
+    image: 'http://i.huffpost.com/gen/1716876/images/o-ATLANTA-TRAFFIC-facebook.jpg' },
+    { name: 'San Francisco',
+     state: 'California', 
+    image: 'https://unsplash.it/600/440?image=693' },
+    { name: 'Las Vegas',
+     state: 'Nevada', 
+    image: 'https://unsplash.it/600/440?image=452' },
+    { name: 'Sacramento',
+     state: 'California', 
+    image: 'https://unsplash.it/600/440?image=792' },
+    
+])
+
+

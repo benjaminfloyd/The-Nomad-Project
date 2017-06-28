@@ -3,14 +3,15 @@
 <div>
 <%= image_tag @city.image %>
 </div>
-<div class="card, center, post" style="width: 300px;">
-  <div class="card-divider, center">
-    <h4>This Person's Post</h4>
-    <img src="http://fillmurray.com/200/300">
-  </div>
 
+<% @city.posts.each do |post|%>
+<div class="card, center, post" style="width: 300px;">
   <div class="card-section">
-    <h4>This Is The Post Title</h4>
-    <p>This is the post. Have you been to Atlanta? It's called the City in the Forest because of all of the trees. Cool!</p>
+      <p><%= post.title %></p>
+        <br>
+        <p><%= image_tag post.img %></p>
+        <br>
+        <p><%= post.post %></p>
   </div>
 </div>
+<% end %>
