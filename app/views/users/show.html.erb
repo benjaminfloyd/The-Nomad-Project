@@ -7,15 +7,18 @@
 <div class = "user-posts"> 
 
 <% current_user.posts.each do |post|%>
-<div class="card, center, post" style="width: 300px;">
-  <div class="card-section">
-      <p><%= post.title %></p>
-        <br>
-        <p><%= image_tag post.img %></p>
-        <br>
-        <p><%= post.post %></p>
-  </div>
-</div>
+	<div class="card, center, post" style="width: 300px;">
+	  <div class="card-section">
+	      <p><%= post.title %></p>
+	        <br>
+	        <p><%= image_tag post.img %></p>
+	        <br>
+	        <p><%= post.post %></p>
+
+
+	  </div>
+	<h5 class = 'user-edit-post-button'><%= link_to 'Edit Post', edit_city_post_path(@post=post.id, @city=post.city_id), class: 'button' %></h5>
+	</div>
 <% end %>
 
 </div>
