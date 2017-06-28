@@ -3,17 +3,21 @@ class PostsController < ApplicationController
     @post = Post.all
   end
 
-  def show
-    @post = Post.find(params[:id])
-  end
 
   def new
-    @city = Film.new
- end
+    @city = City.find(params[:city_id])
+    @post = Post.new
+   end
 
   def create
-    @post = Post.create!(post_params)
-      redirect_to "/posts/#{@post.id}"
+    @city = City.find(params[:city_id])
+    @post = Post.create(post_params)
+    puts @post
+      redirect_to city_path(@city)
+  end
+
+  def show
+    @post = Post.find(params[:id])
   end
 
 #   def edit
@@ -32,5 +36,10 @@ class PostsController < ApplicationController
 
 #     redirect_to "/films"
 #   end
+
+private
+  def post_params
+    params.require(:post).permit(:title, :post, :img).merge(user_id: current_user.id, city_id:params[:city_id])
+  end
 
 end

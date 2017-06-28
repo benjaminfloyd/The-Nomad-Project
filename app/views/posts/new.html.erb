@@ -1,0 +1,8 @@
+<h1>Create a New Post</h1>
+
+<%= form_for @post, as: :post, url: city_posts_path(@city) do |f| %>
+<%= f.text_field :title%>
+<%= f.text_field :post%>
+<%= f.text_field :img%>
+<%= f.submit%> 
+<% end %>
