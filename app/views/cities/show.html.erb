@@ -7,7 +7,8 @@
 <%= image_tag @city.image %>
 </div>
 
-<% @city.posts.each do |post|%>
+<% @city.posts.order(created_at: :desc).each do |post|%>
+<%= link_to(city_post_path(post.id)) do %>
 <div class="card, center, post" style="width: 300px;">
   <div class="card-section">
       <p><%= post.title %></p>
@@ -16,5 +17,6 @@
         <br>
         <p><%= post.post %></p>
   </div>
+<% end %>
 </div>
 <% end %>

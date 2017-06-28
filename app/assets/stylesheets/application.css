@@ -25,3 +25,18 @@
 .top-bar-right {
     margin-top: 15px;
 }
+
+.topbar-responsive-logo {
+    width: 30%;
+    border: 0;
+}
+
+.topbar-responsive {
+    display: flex;
+    flex-direction: row;
+}
+
+.top-bar-title {
+    display: flex;
+    width: 50%;
+}
