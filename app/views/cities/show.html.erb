@@ -8,7 +8,7 @@
 </div>
 
 <% @city.posts.order(created_at: :desc).each do |post|%>
-<%= link_to(city_post_path(post.id)) do %>
+<%= link_to(city_post_path(@city, post.id)) do %>
 <div class="card, center, post" style="width: 300px;">
   <div class="card-section">
       <p><%= post.title %></p>
