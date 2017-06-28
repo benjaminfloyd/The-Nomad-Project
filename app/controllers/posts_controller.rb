@@ -28,8 +28,7 @@ class PostsController < ApplicationController
    @city = City.find(params[:city_id])
    @post = Post.find(params[:id])
    @post.update(post_params)
-  redirect_back(fallback_location: root_path)
-  redirect_back(fallback_location: root_path)
+   redirect_to city_post_path(@city, @post)
   end
   
   def destroy

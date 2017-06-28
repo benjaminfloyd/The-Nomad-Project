@@ -6,7 +6,8 @@
 <p class= "user-post-header"><%= current_user.full_name %>'s posts</p>
 <div class = "user-posts"> 
 
-<% current_user.posts.each do |post|%>
+<% current_user.posts.order(created_at: :desc).each do |post|%>
+<%= link_to(city_post_path(post.city_id, post.id)) do %>
 	<div class="card, center, post" style="width: 300px;">
 	  <div class="card-section">
 	      <p><%= post.title %></p>
@@ -14,14 +15,12 @@
 	        <p><%= image_tag post.img %></p>
 	        <br>
 	        <p><%= post.post %></p>
-
-
 	  </div>
 		<h5 class = 'user-edit-post-button'><%= link_to 'Edit Post', edit_city_post_path(@city=post.city_id, @post=post.id), class: 'button' %></h5>
 		<%= button_to 'Delete Post', city_post_path(@city=post.city_id, @post=post.id), class: 'alert button', method: :delete, data: { confirm: "About to delete post! Are you sure you want to do this?" } %>
 	
 	</div>
-	
+<% end %>
 <% end %>
 
 </div>
