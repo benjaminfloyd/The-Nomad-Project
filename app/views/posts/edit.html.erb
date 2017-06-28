@@ -9,4 +9,6 @@
 
 <% end %>
 
+<h4 class = 'cancel-button'><%= link_to 'Cancel', city_post_path(@city, @post), class: 'button' %></h4>
+
 <%= button_to 'Delete Post', [@city, @post], class: 'alert button', method: :delete, data: { confirm: "About to delete #{@post.title}! Are you sure you want to do this?" } %>
