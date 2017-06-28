@@ -9,5 +9,5 @@
 
 <% end %>
 
-<!--<%= form_for @post, as: :patch, url: edit_city_post_path(@city) do |f| %>
-<% end %>-->
+<%= button_to 'post_destroy', [@city, @post], confirm: 'Are you sure?', :disable_with => 'deleting...', method: :delete %>
+

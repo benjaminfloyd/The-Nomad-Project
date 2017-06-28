@@ -31,12 +31,15 @@ class PostsController < ApplicationController
    redirect_to city_path(@city)
   end
   
-#   def delete
-#     @film = Film.find(params[:id])
-#     @film.destroy
-
-#     redirect_to "/films"
-#   end
+  def destroy
+    @city = City.find(params[:city_id])
+    @post = @city.posts.find(params[:id])
+    if @post.destroy
+    redirect_to city_path(@city), notice: "Comment Removed"
+  else
+    redirect_to city_path(@city), error: "We could not remove the comment"
+  end
+  end
 
 private
   def post_params
