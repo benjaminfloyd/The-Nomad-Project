@@ -17,10 +17,14 @@
 
 
 	  </div>
-	<h5 class = 'user-edit-post-button'><%= link_to 'Edit Post', edit_city_post_path(@post=post.id, @city=post.city_id), class: 'button' %></h5>
+		<h5 class = 'user-edit-post-button'><%= link_to 'Edit Post', edit_city_post_path(@post=post.id, @city=post.city_id), class: 'button' %></h5>
+		<%= button_to 'Delete Post', city_post_path(@post=post.id, @city=post.city_id), class: 'alert button', method: :delete, data: { confirm: "About to delete post! Are you sure you want to do this?" } %>
+	
 	</div>
+	
 <% end %>
 
 </div>
+
 
 <h4 class = 'edit-user-button'><%= link_to 'Edit User', edit_user_registration_path(@current_user), class: 'button' %></h4>
