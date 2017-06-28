@@ -3,7 +3,8 @@
 <h2>Email: <%= current_user.email %></h2>
 <h3>City: <%= current_user.current_city %></h3>
 </div>
-<div class = "posts">
+<p class= "post-header"><%= current_user.full_name %>'s posts</p>
+<div class = "posts"> 
 
 <% current_user.posts.each do |post|%>
 <div class="card, center, post" style="width: 300px;">
