@@ -9,6 +9,13 @@
 <div class="featured-image-block-grid, center">
     <h2>Top Destinations</h2>
     <p>Start planning your travels here with the latest deals for popular destinations.</p>
+        <div class="search-bar">
+      <%= form_tag(cities_path, method: :get) do %>
+     Search Cities <%= text_field_tag :name, params[:name] %>
+      <%= submit_tag 'Search', name: nil%>
+      <% end %>
+    </div>
+
   <div class="row large-up-4 small-up-2">
     <div class="featured-image-block column">
      <a href="/cities/1">
@@ -33,38 +40,10 @@
     
     <div class="featured-image-block column">
      <a href="/cities/4">
-        <img src="https://unsplash.it/600/440?image=792" />
-        <p class="text-center featured-image-block-title">Sacramento</p>
+        <img src="http://www.marrygoaround.com/wp-content/uploads/2013/03/london-romantic-honeymoon.jpg" />
+        <p class="text-center featured-image-block-title">London</p>
       </a>
     </div>
-    
-    <!--<div class="featured-image-block column">
-     <a href="#">
-        <img src="https://unsplash.it/600/440?image=667" />
-        <p class="text-center featured-image-block-title">Los Angeles</p>
-      </a>
-    </div>
-  
-    <div class="featured-image-block column">
-     <a href="#">
-        <img src="https://unsplash.it/600/440?image=249" />
-        <p class="text-center featured-image-block-title">Chicago</p>
-      </a>
-    </div>
-    
-    <div class="featured-image-block column">
-     <a href="#">
-        <img src="https://unsplash.it/600/440?image=382" />
-        <p class="text-center featured-image-block-title">Boston</p>
-      </a>
-    </div>
-
-       <div class="featured-image-block column">
-     <a href="#">
-        <img src="https://unsplash.it/600/440?image=899" />
-        <p class="text-center featured-image-block-title">New York</p>
-      </a>
-    </div>-->
   </div>
 </div>
 
