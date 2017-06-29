@@ -14,6 +14,7 @@ $hero-height: 60vh;
 //   top: 0px;
 // }
 
+
 .post {
   padding: 10px;
   margin: 10px;
@@ -229,18 +230,16 @@ $card-user-container-image-size: rem-calc(190);
   left: 0px;
   top: 125px;
   padding: 15px;
-  width: 20vw; 
+  width: 25vw; 
   padding-bottom: 20px;
 
   .card-user-avatar {
     .user-image {
       display: block;
       margin: auto;
-      border-radius: 50%;
-      width: $card-user-container-image-size;
-      height: $card-user-container-image-size;
-      padding: rem-calc(15);
-
+      width: 100%;
+      margin-top: 15px;
+      padding: 10px;
       &:hover {
         transform: scale(1.1);
       }
@@ -289,16 +288,6 @@ $card-user-container-image-size: rem-calc(190);
     text-align: center;
     padding: 1rem;
   }
-}
-
-#user-show-posts {
-  width: 80vw;
-  float: right;
-}
-
-#user-show-center {
-   width: 65vw;
-   margin: 0 10vw;
 }
 
 // for cards for posts
@@ -441,3 +430,35 @@ $travel-feature-card-header-background-color: #56524b;
   }
 }
 
+.post-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.posts-panel {
+  display: flex;
+  flex-direction: column;
+}
+
+#user-show-posts {
+  width: 70vw;
+  float: right;
+  display: flex;
+}
+
+#user-show-posts #user-delete-post-button, #user-edit-post-button {
+  float: right;
+  width: 50%;
+}
+
+#user-show-center {
+   width: 60vw;
+   margin: 0 10vw;
+}
+
+#post-glyph {
+  display: flex;
+  flex-direction: column;
+  float: right;
+  width: 25%;
+}

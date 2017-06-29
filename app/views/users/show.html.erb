@@ -2,7 +2,7 @@
 <%= render :partial => 'partials/user' %>
 
 
-<div id='user-show-posts'>
+<div id='user-show-posts', class='center'>
 <div id='user-show-center'>
 	<div class='post-wrapper, center'>
 		<div class="posts-panel">
@@ -10,26 +10,27 @@
 				<h1 class="panel-title"><%= current_user.full_name %>'s Posts</h1>
 			</header>
 			<% current_user.posts.order(created_at: :desc).each do |post|%>
-				<%= link_to(city_post_path(post.city_id, post.id)) do %>
+					<%= link_to(city_post_path(post.city_id, post.id)) do %>
 					<section class="posts-list">
+			<div id='post-glyph'>
+				<h5 id='user-edit-post-button'><%= link_to link_to image_tag("https://image.flaticon.com/icons/png/128/34/34022.png"), edit_city_post_path(@city=post.city_id, @post=post.id)%></h5>
+				<h5 id='user-delete-post-button'><%= link_to image_tag("https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-trash-a-128.png"), city_post_path(@city=post.city_id, @post=post.id), method: :delete, data: { confirm: "About to delete #{post.title}! Are you sure you want to do this?" } %></h5>
+			</div>
 					<div class="post-item">
-						<a><%= image_tag post.img %></a>
+						<p><%= image_tag post.img %></p>
 						<div class="post-text">
-							<h3 class="post-title"><%=post.title%></h3>
+							<h4 class="post-title">Post Title: <%=post.title%></h4>
 							<div class="post-meta">
-								<span class="meta"><span class="meta-icon fa fa-user-circle-o" aria-hidden="true"></span><a class="meta-text"><%= post.user.full_name %></a></span>
-								<span class="meta"><span class="meta-icon fa fa-clock-o" aria-hidden="true"></span><span class="meta-text"><%=post.created_at%></span></span>
+								<span class="meta"><span class="meta-icon fa fa-user-circle-o" aria-hidden="true"></span><%= post.user.full_name %></span>
+								<span class="meta"><span class="meta-icon fa fa-clock-o" aria-hidden="true"></span><span class="meta-text">posted at <%=post.created_at%></span></span>
 							</div>
 							<div class="post-summary">
-								<p><%= post.post %>
-									<a href="#" class="post-read-more"><span class="fa fa-chevron-circle-right" aria-hidden="true"></span></a>
+								<p>Post Content: <%= post.post %>
+						<% end %>
 								</p>
 							</div>
-							<h5 class = 'user-edit-post-button'><%= link_to 'Edit Post', edit_city_post_path(@city=post.city_id, @post=post.id), class: 'button' %></h5>
-							<%= button_to 'Delete Post', city_post_path(@city=post.city_id, @post=post.id), class: 'alert button', method: :delete, data: { confirm: "About to delete post! Are you sure you want to do this?" } %>
 						</div>
 					</div>
-				<% end %>
 				<hr>
 			<% end %>
 		</div>
