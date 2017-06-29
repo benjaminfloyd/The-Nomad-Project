@@ -1,46 +1,46 @@
+<div id="hero-background">
+  <div class="row" align="center">
+    <div class="translucent-form-overlay">
+        <div Class='title'><%= image_tag "logo/Nomad_Compass_Full_Tag.png" ,style: 'height:85px;width:auto;align="center"'%></div>
+          <%= form_for(resource, as: resource_name, url: registration_path(resource_name), auto_labels: false) do |f| %>
+            <%= devise_error_messages! %>
+            <form>
+              <h3>Sign up</h3>
+              <div class="row columns">
+                <label>Email
+                  <%= f.email_field :email, autofocus: true, class: "input-group-field", placeholder: "email" %>
+                </label>
+              </div>
+              <div class="row columns">
+                <label>Full Name
+                <%= f.text_field :full_name, autofocus: true, class: "input-group-field", placeholder: "Enter full name" %>
+                </label>
+              </div>
+              <div class="row columns">
+                <label>Current City
+                    <%= f.text_field :current_city, autofocus: true, class: "input-group-field", placeholder: "Enter current city" %>
+                </label>
+              </div>
+              <% if @minimum_password_length %>
+              <em>(<%= @minimum_password_length %> characters minimum)</em>
+              <% end %><br />
+              <div class="row columns">
+                <label>Password
+                  <%= f.password_field :password, autocomplete: "off", class: "input-group-field", placeholder: "Enter password" %>
+                </label>
+              </div>
+              <div class="row columns">
+              <%= f.password_field :password_confirmation, autocomplete: "off", class: "input-group-field", placeholder: "re-enter password" %> 
+              </div>
+              <div>
+              <br>
+              <%= f.submit "Sign up", class: "primary button expanded signin-button row columns"%>
+              </div>
+            </form>
+           <% end %>
+           </div>
+        
+    </div>  
+  </div>          
+</div>
 
-<h2>Sign up</h2>
-
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name), auto_labels: false) do |f| %>
-  <%= devise_error_messages! %>
-
-  <div class="input-group">
-    <span class="input-group-label">
-      <i class="fa fa-envelope"></i>
-    </span>
-    <%= f.email_field :email, autofocus: true, class: "input-group-field", placeholder: "email" %>
-  </div>
-  <div class="input-group">
-    <span class="input-group-label">
-      <i class="fa fa-user"></i>
-    </span>
-    <%= f.text_field :full_name, autofocus: true, class: "input-group-field", placeholder: "Enter full name" %>
-  </div>
-  <div class="input-group">
-    <span class="input-group-label">
-      <i class="fa fa-envelope"></i>
-    </span>
-    <%= f.text_field :current_city, autofocus: true, class: "input-group-field", placeholder: "Enter current city" %>
-  </div>
-      <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-  <div class="input-group">
-    <span class="input-group-label">
-      <i class="fa fa-key"></i>
-    </span>
-    <%= f.password_field :password, autocomplete: "off", class: "input-group-field", placeholder: "Enter password" %>
-  </div>
-  <div class="input-group">
-    <span class="input-group-label">
-      <i class="fa fa-envelope"></i>
-    </span>
-    <%= f.password_field :password_confirmation, autocomplete: "off", class: "input-group-field", placeholder: "re-enter password" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Sign up", class: "button expanded" %>
-  </div>
-<% end %>
-
-<%= render "users/shared/links" %>
