@@ -1,3 +1,6 @@
+Post.delete_all
+City.delete_all
+
 
 City.create([
     { name: 'Atlanta',
@@ -9,10 +12,8 @@ City.create([
     { name: 'Las Vegas',
      state: 'Nevada', 
     image: 'https://unsplash.it/600/440?image=452' },
-    { name: 'Sacramento',
-     state: 'California', 
-    image: 'https://unsplash.it/600/440?image=792' },
+    { name: 'London',
+     state: 'England', 
+    image: 'https://unsplash.it/600/440?image=792' }
     
 ])
-
-
