@@ -21,6 +21,13 @@
     color: rgba(255,255,255,.7)
 }
 
-a { 
-    color: inherit; 
+
+#hero-background {
+    height: 700px;
+    background-image: url(http://lorempixel.com/output/city-q-c-1200-700-9.jpg);
+    background-size: cover;
+    color: #fefefe;
+    padding: 40px 0;
 }
+
+
