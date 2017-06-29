@@ -9,6 +9,13 @@
 <div class="featured-image-block-grid, center">
     <h2>Top Destinations</h2>
     <p>Start planning your travels here with the latest deals for popular destinations.</p>
+        <div class="search-bar">
+      <%= form_tag(cities_path) do %>
+      Name <%= text_field_tag :name %>
+      <%= submit_tag 'Search' %>
+      <% end %>
+    </div>
+
   <div class="row large-up-4 small-up-2">
     <div class="featured-image-block column">
      <a href="/cities/1">
@@ -37,6 +44,7 @@
         <p class="text-center featured-image-block-title">Sacramento</p>
       </a>
     </div>
+   
     
     <!--<div class="featured-image-block column">
      <a href="#">
