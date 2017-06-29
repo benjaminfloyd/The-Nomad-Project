@@ -230,7 +230,7 @@ $card-user-container-image-size: rem-calc(190);
   left: 0px;
   top: 125px;
   padding: 15px;
-  width: 25vw; 
+  width: 40vw; 
   padding-bottom: 20px;
 
   .card-user-avatar {
@@ -356,7 +356,7 @@ $travel-feature-card-header-background-color: #56524b;
   border-left: 1px solid #ddd;
   border-right: 1px solid #ddd;
   border-bottom: 1px solid #ddd;
-  padding: 20px;
+  padding: 10px 10px 0px 10px;
   color: $travel-feature-card-body-color;
   
   button.added-button {
@@ -391,12 +391,12 @@ $travel-feature-card-header-background-color: #56524b;
 }
 .travel-feature-card-price {
   text-align: right;
+  margin-top: 16px;
   
   @include breakpoint(small only) {
-    padding-top: 15px;
     
     .price-subtext {
-      margin-bottom: 0px;
+      margin: 0px;
     }
   }
 
@@ -432,7 +432,7 @@ $travel-feature-card-header-background-color: #56524b;
 
 .post-item {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
 }
 
 .posts-panel {
@@ -441,7 +441,7 @@ $travel-feature-card-header-background-color: #56524b;
 }
 
 #user-show-posts {
-  width: 70vw;
+  width: 60vw;
   float: right;
   display: flex;
 }
@@ -452,13 +452,19 @@ $travel-feature-card-header-background-color: #56524b;
 }
 
 #user-show-center {
-   width: 60vw;
-   margin: 0 10vw;
+   width: 50vw;
+   margin: 0 5vw;
 }
 
 #post-glyph {
   display: flex;
   flex-direction: column;
-  float: right;
+  justify-content: center;
+  align-items: center;
   width: 25%;
+
+  h5 {
+    margin: 45px 0;
+
+  }
 }
