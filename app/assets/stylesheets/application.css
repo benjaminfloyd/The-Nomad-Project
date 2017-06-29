@@ -54,3 +54,23 @@
     padding: 40px 0;
 
 }
+
+#login-hero-background {
+    height: 750px;
+    background-image: url("./andrea-vincenzo-abbondanza-38989.jpg");
+    background-size: cover;
+    color: #fefefe;
+    padding: 40px 0;
+    justify-content: center;
+}
+
+#login-logo{
+    
+  background-size: cover;
+  height: $hero-height;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+}
