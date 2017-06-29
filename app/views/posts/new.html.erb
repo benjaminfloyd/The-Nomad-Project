@@ -1,4 +1,7 @@
 <div id="post-hero-background">
+<style media="screen">
+  #post-hero-background { background-image: url(<%= @city.image %>); }
+</style>
     <div class="row translucent-form-overlay" align="center">
         <%= form_for @post, as: :post, url: city_posts_path(@city) do |f| %>
         <% if @post.errors.any? %>

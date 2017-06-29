@@ -38,6 +38,14 @@
     padding: 10px 0;
 }
 
+#edit-post-hero-background {
+    height: 700px;
+    
+    background-size: cover;
+    color: #fefefe;
+    padding: 10px 0;
+}
+
 #form-hero-background{
     height: 1750px;
     background-image: url(http://lorempixel.com/output/city-q-c-1200-700-9.jpg);

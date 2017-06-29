@@ -1,25 +1,35 @@
-<h1>Edit a Post</h1>
+<div id="edit-post-hero-background">
+<style media="screen">
+  #edit-post-hero-background { background-image: url(<%= @post.img %>); }
+</style>
+    <div class="row translucent-form-overlay" align="center">
+        <%= form_for @post, as: :post, url: city_posts_path(@city) do |f| %>
+        <% if @post.errors.any? %>
+            <div id="error_explanation">
+            <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
 
+            <ul>
+            <% @post.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+            <% end %>
+            </ul>
+            </div>
+        <% end %>
+        <form>
+                <div class="columns">
+                    <label rows="4"> 
+                        <%= f.text_area( :title, cols: 20, rows: 1)%>
+                        <%= f.text_area( :post, cols: 20, rows: 20)%>
+                        <%= f.text_field :img%>
+                        <%= f.submit%>
+                </div>
+                <h4 class = 'cancel-button'><%= link_to 'Cancel', city_post_path(@city, @post), class: 'button' %></h4>
 
-<%= form_for @post, url: {action: "update"} do |f| %>
- <% if @post.errors.any? %>
-    <div id="error_explanation">
-    <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
+                <%= button_to 'Delete Post', [@city, @post], class: 'alert button', method: :delete, data: { confirm: "About to delete #{@post.title}! Are you sure you want to do this?" } %>
+            </div>
+            
+        </form>
+        <% end %>
 
-    <ul>
-    <% @post.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-    <% end %>
-    </ul>
     </div>
-<% end %>
-<%= f.text_field :title%>
-<%= f.text_field :post%>
-<%= f.text_field :img%>
-<%= f.submit%> 
-
-<% end %>
-
-<h4 class = 'cancel-button'><%= link_to 'Cancel', city_post_path(@city, @post), class: 'button' %></h4>
-
-<%= button_to 'Delete Post', [@city, @post], class: 'alert button', method: :delete, data: { confirm: "About to delete #{@post.title}! Are you sure you want to do this?" } %>
+</div>
