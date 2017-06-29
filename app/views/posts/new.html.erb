@@ -1,6 +1,17 @@
 <div id="post-hero-background">
     <div class="row translucent-form-overlay" align="center">
         <%= form_for @post, as: :post, url: city_posts_path(@city) do |f| %>
+        <% if @post.errors.any? %>
+            <div id="error_explanation">
+            <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
+
+            <ul>
+            <% @post.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+            <% end %>
+            </ul>
+            </div>
+        <% end %>
         <form>
                 <div class="columns">
                     <label rows="4"> 

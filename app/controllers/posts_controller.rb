@@ -12,7 +12,16 @@ class PostsController < ApplicationController
   def create
     @city = City.find(params[:city_id])
     @post = Post.create(post_params)
-      redirect_to city_path(@city)
+    
+    respond_to do |format|
+      if @post.save
+        format.html { redirect_to city_post_path(@city, @post), notice: 'Post was successfully created.' }
+        format.json { render :show, status: :created, location: @post }
+      else
+        format.html { render :new }
+        format.json { render json: @post.errors, status: :unprocessable_entity }
+      end
+    end
   end
 
   def show
@@ -28,7 +37,16 @@ class PostsController < ApplicationController
    @city = City.find(params[:city_id])
    @post = Post.find(params[:id])
    @post.update(post_params)
-   redirect_to city_post_path(@city, @post)
+   
+   respond_to do |format|
+      if @post.save
+        format.html { redirect_to city_post_path(@city, @post), notice: 'Post was successfully updatedd.' }
+        format.json { render :show, status: :created, location: @post }
+      else
+        format.html { render :new }
+        format.json { render json: @post.errors, status: :unprocessable_entity }
+      end
+    end
   end
   
   def destroy
