@@ -30,4 +30,12 @@
     padding: 40px 0;
 }
 
+#post-hero-background {
+    height: 700px;
+    
+    background-size: cover;
+    color: #fefefe;
+    padding: 10px 0;
+}
+
 
