@@ -1,9 +1,11 @@
+
+<p></p>
+<br>
 <div class='center'>
-<h1><%= @post.title %></h1>
+<h2><%= @post.title %></h2>
 <br>
 <h1><%= image_tag @post.img %></h1>
 <br>
 <p><%= @post.post %></p>
-</div>
-
 <h4 class = 'edit-post-button'><%= link_to 'Edit Post', edit_city_post_path(@city = @post.city_id, @post), class: 'button' %></h4>
+</div>

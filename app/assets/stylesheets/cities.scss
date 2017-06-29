@@ -489,8 +489,8 @@ $travel-feature-card-header-background-color: #56524b;
 
 #user-show-posts {
   width: 60vw;
-  float: right;
   display: flex;
+  margin-left:40vw;
 }
 
 #user-show-posts #user-delete-post-button, #user-edit-post-button {
