@@ -1,43 +1,38 @@
 
 <%= render :partial => 'partials/user' %>
 
-</div>
-<div class = 'post-wrapper, center'>
-<!-- Sample 1-->
-<!-- Posts panel container -->
-<div class="posts-panel">
 
-  <!-- Panel's header -->
-  <header class="panel-header">
-    <h1 class="panel-title"><%= current_user.full_name %>'s Posts</h1>
-  </header>
-
-<% current_user.posts.order(created_at: :desc).each do |post|%>
-<%= link_to(city_post_path(post.city_id, post.id)) do %>
-    <!-- Posts list -->
-    <section class="posts-list">
-      <div class="post-item">
-          <a><%= image_tag post.img %></a>
-        <div class="post-text">
-        
-            <h3 class="post-title"><%=post.title%></h3>
-
-          <div class="post-meta">
-            <span class="meta"><span class="meta-icon fa fa-user-circle-o" aria-hidden="true"></span><a class="meta-text"><%= post.user.full_name %></a></span>
-            <span class="meta"><span class="meta-icon fa fa-clock-o" aria-hidden="true"></span><span class="meta-text"><%=post.created_at%></span></span>
-          </div>
-          <div class="post-summary">
-            <p><%= post.post %>
-              <a href="#" class="post-read-more"><span class="fa fa-chevron-circle-right" aria-hidden="true"></span></a>
-            </p>
-          </div>
-					<h5 class = 'user-edit-post-button'><%= link_to 'Edit Post', edit_city_post_path(@city=post.city_id, @post=post.id), class: 'button' %></h5>
-		<%= button_to 'Delete Post', city_post_path(@city=post.city_id, @post=post.id), class: 'alert button', method: :delete, data: { confirm: "About to delete post! Are you sure you want to do this?" } %>
-					<hr>
+<div id='user-show-posts'>
+<div id='user-show-center'>
+	<div class='post-wrapper, center'>
+		<div class="posts-panel">
+			<header class="panel-header">
+				<h1 class="panel-title"><%= current_user.full_name %>'s Posts</h1>
+			</header>
+			<% current_user.posts.order(created_at: :desc).each do |post|%>
+				<%= link_to(city_post_path(post.city_id, post.id)) do %>
+					<section class="posts-list">
+					<div class="post-item">
+						<a><%= image_tag post.img %></a>
+						<div class="post-text">
+							<h3 class="post-title"><%=post.title%></h3>
+							<div class="post-meta">
+								<span class="meta"><span class="meta-icon fa fa-user-circle-o" aria-hidden="true"></span><a class="meta-text"><%= post.user.full_name %></a></span>
+								<span class="meta"><span class="meta-icon fa fa-clock-o" aria-hidden="true"></span><span class="meta-text"><%=post.created_at%></span></span>
+							</div>
+							<div class="post-summary">
+								<p><%= post.post %>
+									<a href="#" class="post-read-more"><span class="fa fa-chevron-circle-right" aria-hidden="true"></span></a>
+								</p>
+							</div>
+							<h5 class = 'user-edit-post-button'><%= link_to 'Edit Post', edit_city_post_path(@city=post.city_id, @post=post.id), class: 'button' %></h5>
+							<%= button_to 'Delete Post', city_post_path(@city=post.city_id, @post=post.id), class: 'alert button', method: :delete, data: { confirm: "About to delete post! Are you sure you want to do this?" } %>
+						</div>
+					</div>
+				<% end %>
+				<hr>
 			<% end %>
-<% end %>
-        </div>
-      </div>
+		</div>
+	</div>
 </div>
-
-<h4 class = 'edit-user-button'><%= link_to 'Edit User', edit_user_registration_path(@current_user), class: 'button' %></h4>
+</div>
