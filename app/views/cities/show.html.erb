@@ -1,22 +1,32 @@
-
 <div class='city-header'>
-<h1 class='center, city-name'>The City of <%= @city.name %>, <%= @city.state %></h1>
-<h3 class = 'new-post-button'><%= link_to 'New Post', new_city_post_path(@city), class: 'button' %></h3>
-</div>
-<div>
+ <h1 class='center, city-name'>The City of <%= @city.name %>, <%= @city.state %></h1>
+ <h3 class = 'new-post-button'><%= link_to 'New Post', new_city_post_path(@city), class: 'button' %></h3>
+ </div>
 <%= image_tag @city.image %>
 </div>
 
-<% @city.posts.order(created_at: :desc).each do |post|%>
-<%= link_to(city_post_path(@city, post.id)) do %>
-<div class="card, center, post" style="width: 300px;">
-  <div class="card-section">
-      <p><%= post.title %></p>
-        <br>
-        <p><%= image_tag post.img %></p>
-        <br>
-        <p><%= post.post %></p>
+<% @city.posts.each do |post|%>
+  <div class="travel-feature-card-details">
+
+    <div class="row">
+      <div class="small-12 medium-9 columns travel-feature-card-content">
+        <div class="row">
+          <div class="small-4 medium-2 columns">
+           <%= image_tag post.img %>
+          </div>
+          <div class="small-8 medium-10 columns">
+            <h6 class="travel-feature-card-title"><%= post.title %></h6>
+            <p><%= post.post %></p>
+          </div>
+        </div> 
+      </div>
+
+      <div class="small-12 medium-3 columns travel-feature-card-price">
+        <h6> <%= post.user.full_name %></h6>
+        <p class="travel-feature-card-price-subtext"><%=post.user.created_at %></p>
+      </div>
+    </div> 
   </div>
-<% end %>
 </div>
 <% end %>
+

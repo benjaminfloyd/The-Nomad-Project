@@ -1,0 +1,14 @@
+<div class="card-user-container">
+
+  <div class="card-user-avatar">
+    <a class="user-image"><%= image_tag current_user.image %></a>
+  </div>
+
+  <!--user info name, bio and location-->
+  <div class="card-user-bio">
+    <h4><%= current_user.full_name %></h4>
+    <p>Member Since: <%= current_user.created_at %></p>
+    <span class="location"><span class="location-icon fa fa-map-marker"></span><span class="location-text">Current City: <%= current_user.current_city %></span></span>
+  </div>
+  <h4 class = 'edit-user-button'><%= link_to 'Edit User', edit_user_registration_path(@current_user), class: 'button' %></h4>
+</div>

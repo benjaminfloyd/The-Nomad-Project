@@ -18,6 +18,12 @@
   </div>
   <div class="input-group">
     <span class="input-group-label">
+      <i class="fa fa-user"></i>
+    </span>
+    <%= f.text_field :image, autofocus: true, class: "input-group-field", placeholder: "Enter Image Url" %>
+  </div>
+  <div class="input-group">
+    <span class="input-group-label">
       <i class="fa fa-envelope"></i>
     </span>
     <%= f.text_field :current_city, autofocus: true, class: "input-group-field", placeholder: "Enter current city" %>

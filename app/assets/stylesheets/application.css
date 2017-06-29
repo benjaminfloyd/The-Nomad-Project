@@ -10,7 +10,6 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
- 
  *= require foundation_and_overrides
  *= require_self
  *= require_tree .
@@ -20,23 +19,4 @@
  */
 .current-user {
     color: rgba(255,255,255,.7)
-}
-
-.top-bar-right {
-    margin-top: 15px;
-}
-
-.topbar-responsive-logo {
-    width: 30%;
-    border: 0;
-}
-
-.topbar-responsive {
-    display: flex;
-    flex-direction: row;
-}
-
-.top-bar-title {
-    display: flex;
-    width: 50%;
 }
