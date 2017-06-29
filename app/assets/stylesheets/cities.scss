@@ -7,6 +7,14 @@
 
 $hero-height: 60vh;
 
+// #static-nav {
+//   position: fixed;
+//   width: 100vw;
+//   left: 0px;
+//   top: 0px;
+// }
+
+
 .post {
   padding: 10px;
   margin: 10px;
@@ -234,8 +242,256 @@ $translucent-form-overlay-max-width: 500px;
 }
 
 
+// this is for the user cards
+$card-user-container-margin-bottom: 1rem;
+$card-user-container-radius: $global-radius;
+$card-user-container-background: $white;
+$card-user-container-color: $black;
+$card-user-container-image-size: rem-calc(190);
 
+.card-user-container {
+  text-align: center;
+  overflow: hidden;
+  padding: 0;
+  position: fixed;
+  left: 0px;
+  top: 125px;
+  padding: 15px;
+  width: 40vw; 
+  padding-bottom: 20px;
 
+  .card-user-avatar {
+    .user-image {
+      display: block;
+      margin: auto;
+      width: 100%;
+      margin-top: 15px;
+      padding: 10px;
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+  }
 
+  .card-user-bio {
+    padding: 1rem;
+    text-align: center;
 
+    .location {
+      display: inline-block;
+      margin: 0 rem-calc(15);
+      color: $secondary-color;
+      font-size: rem-calc(14);
+    }
 
+    .location-icon,
+    .location-text {
+      display: inline-block;
+      padding: 0 rem-calc(5);
+    }
+  }
+
+  .card-user-social {
+    background: $light-gray;
+    padding: 1rem;
+    text-align: center;
+
+    ul {
+      display: inline-block;
+
+      li {
+        margin: 0 10px;
+        font-size: 1.2em;
+        cursor: pointer;
+
+        &:hover {
+          transform: scale(1.1);
+        }
+      }
+    }
+  }
+
+  .card-user-button {
+    text-align: center;
+    padding: 1rem;
+  }
+}
+
+// for cards for posts
+
+$travel-feature-card-header-font-color: $black;
+$travel-feature-card-body-color: $dark-gray;
+$travel-feature-card-header-background-color: #56524b;
+
+.travel-feature-card-header {
+  margin-top: 30px;
+  background-color: $travel-feature-card-header-background-color;
+  padding: 10px 15px 5px 45px;
+  position: relative;
+  
+  @include breakpoint(small) {
+    margin-top: 15px;
+  }
+ 
+  &.icon:after {
+      font: normal normal normal 14px/1 FontAwesome;
+      text-rendering: auto;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      position: absolute;
+      left: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: $white;
+  }
+
+  &.hotel-icon:after {
+    content: "\f236";
+  }
+
+  &.car-icon:after {
+    content: "\f1b9"
+  }
+  
+  .travel-feature-card-subtitle {
+    float: left;
+    font-weight: 800;
+    letter-spacing: 1px;
+    font-size: 1em;
+    text-transform: uppercase;
+    color: #fff;
+  }
+}
+
+.travel-feature-card-header-controls {
+  a {
+    color: $white;
+  }
+  i {
+    height: 20px;
+    width: 20px;
+    margin-left: 10px;
+  }
+}
+
+.travel-feature-card-image {
+  margin-top: 5px;
+}
+
+.travel-feature-card-details{
+  background: #f0f0f0;
+  border-left: 1px solid #ddd;
+  border-right: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  padding: 10px 10px 0px 10px;
+  color: $travel-feature-card-body-color;
+  
+  button.added-button {
+    color: #505050;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    font-size: 0.8em;
+    
+    img {
+      margin-right: 5px;
+    }
+  }
+  
+  button.added-button:hover {
+    color: lighten(#505050, 0%);
+    border: 1px solid #747474;
+  }
+  
+  button.add-button {
+    color: #fff;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    font-size: 0.8em;
+  }
+}
+
+.travel-feature-card-content {
+  @include breakpoint(small only) {
+    padding-bottom: 15px;
+    border-bottom: 1px solid $medium-gray;
+  }
+}
+.travel-feature-card-price {
+  text-align: right;
+  margin-top: 16px;
+  
+  @include breakpoint(small only) {
+    
+    .price-subtext {
+      margin: 0px;
+    }
+  }
+
+  h6 {
+    font-weight: 600;
+    font-size: 1.3em;
+    color: $travel-feature-card-header-font-color;
+    padding: 0;
+    margin: 0;
+  }
+}
+
+.travel-feature-card-title {
+  font-weight: 500;
+  font-size: 1.25em;
+  color: $travel-feature-card-header-font-color;
+}
+
+.travel-feature-card-date-range {
+  font-size: 0.9em;
+  font-weight: 700;
+  color: $travel-feature-card-header-font-color;
+}
+
+.travel-feature-card-header-controls {
+  float: right;
+  i {
+    height: 20px;
+    width: 20px;
+    margin-left: 10px;
+  }
+}
+
+.post-item {
+  display: flex;
+  flex-direction: row;
+}
+
+.posts-panel {
+  display: flex;
+  flex-direction: column;
+}
+
+#user-show-posts {
+  width: 60vw;
+  float: right;
+  display: flex;
+}
+
+#user-show-posts #user-delete-post-button, #user-edit-post-button {
+  float: right;
+  width: 50%;
+}
+
+#user-show-center {
+   width: 50vw;
+   margin: 0 5vw;
+}
+
+#post-glyph {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 25%;
+
+  h5 {
+    margin: 45px 0;
+
+  }
+}

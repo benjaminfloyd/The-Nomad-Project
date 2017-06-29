@@ -1,29 +1,39 @@
-<div class = "user">
-<h1 class="h1user"><%= current_user.full_name %></h1>
-<h2 class="h2user">Email: <%= current_user.email %></h2>
-<h3 class="h3user">City: <%= current_user.current_city %></h3>
-</div>
-<p class= "user-post-header"><%= current_user.full_name %>'s posts</p>
-<div class = "user-posts"> 
 
-<% current_user.posts.order(created_at: :desc).each do |post|%>
-<%= link_to(city_post_path(post.city_id, post.id)) do %>
-	<div class="card, center, post" style="width: 300px;">
-	  <div class="card-section">
-	      <p><%= post.title %></p>
-	        <br>
-	        <p><%= image_tag post.img %></p>
-	        <br>
-	        <p><%= post.post %></p>
-	  </div>
-		<h5 class = 'user-edit-post-button'><%= link_to 'Edit Post', edit_city_post_path(@city=post.city_id, @post=post.id), class: 'button' %></h5>
-		<%= button_to 'Delete Post', city_post_path(@city=post.city_id, @post=post.id), class: 'alert button', method: :delete, data: { confirm: "About to delete post! Are you sure you want to do this?" } %>
-	
+<%= render :partial => 'partials/user' %>
+
+
+<div id='user-show-posts', class='center'>
+<div id='user-show-center'>
+	<div class='post-wrapper, center'>
+		<div class="posts-panel">
+			<header class="panel-header">
+				<h1 class="panel-title"><%= current_user.full_name %>'s Posts</h1>
+			</header>
+			<% current_user.posts.order(created_at: :desc).each do |post|%>
+				<%= link_to(city_post_path(post.city_id, post.id)) do %>
+					<div class="post-item">
+						<div>
+							<%= image_tag post.img %>
+							<div class="post-text">
+								<h4 class="post-title">Post Title: <%=post.title%></h4>
+								<div class="post-meta">
+									<span class="meta"><span class="meta-icon fa fa-user-circle-o" aria-hidden="true"></span><%= post.user.full_name %></span>
+									<span class="meta"><span class="meta-icon fa fa-clock-o" aria-hidden="true"></span><span class="meta-text">posted at <%=post.created_at%></span></span>
+								</div>
+								<div class="post-summary">
+									<p>Post Content: <%= post.post %></p>
+								</div>
+							</div>
+						</div>
+						<div id='post-glyph'>
+							<h5 id='user-edit-post-button'><%= link_to link_to image_tag("https://image.flaticon.com/icons/png/128/34/34022.png"), edit_city_post_path(@city=post.city_id, @post=post.id)%></h5>
+							<h5 id='user-delete-post-button'><%= link_to image_tag("https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-trash-a-128.png"), city_post_path(@city=post.city_id, @post=post.id), method: :delete, data: { confirm: "About to delete #{post.title}! Are you sure you want to do this?" } %></h5>
+						</div>
+					</div>
+				<% end %>
+				<hr>
+			<% end %>
+		</div>
 	</div>
-<% end %>
-<% end %>
-
 </div>
-
-
-<h4 class = 'edit-user-button'><%= link_to 'Edit User', edit_user_registration_path(@current_user), class: 'button' %></h4>
+</div>
