@@ -62,13 +62,25 @@ $hero-height: 60vh;
     text-shadow: 1px 1px 2px black;
   }
 }
-
+// Nav Bar
 $topbar-responsive-bg: #2c3840;
 $topbar-responsive-animation-type: fade-in; // or use slide-down or none
 
+#top-bar-logo{
+  margin: 25px;
+
+}
+#top-bar-title{
+  padding: 0px;
+  
+}
+#top-bar-right{
+  margin: 50px;
+}
 .topbar-responsive {
   background: $topbar-responsive-bg;
-  padding: 1rem 1.5rem;
+  padding: 0px 0px;
+  
 
   .topbar-responsive-logo {
     color: white;
