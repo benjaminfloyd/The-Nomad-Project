@@ -64,6 +64,7 @@ $hero-height: 60vh;
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 100vw;
 
   .hero-section-text {
     color: white;
@@ -71,15 +72,20 @@ $hero-height: 60vh;
   }
 }
 // Nav Bar
+
+#logo{
+  margin-top: 0px;
+}
 $topbar-responsive-bg: #2c3840;
 $topbar-responsive-animation-type: fade-in; // or use slide-down or none
 
 #top-bar-logo{
-  margin: 25px;
+  margin: 0px;
 
 }
 #top-bar-title{
   padding: 0px;
+  height: 0px;
   
 }
 #top-bar-right{
@@ -88,6 +94,7 @@ $topbar-responsive-animation-type: fade-in; // or use slide-down or none
 .topbar-responsive {
   background: $topbar-responsive-bg;
   padding: 0px 0px;
+  height: 90px;
   
 
   .topbar-responsive-logo {
@@ -99,7 +106,7 @@ $topbar-responsive-animation-type: fade-in; // or use slide-down or none
     background: $topbar-responsive-bg;
 
     li:last-of-type {
-      margin-right: 0;
+      margin-right: 5px;
     }
 
     a {
@@ -112,6 +119,7 @@ $topbar-responsive-animation-type: fade-in; // or use slide-down or none
 
       @media screen and (max-width: 39.9375em) {
         padding: 0.875rem 0;
+        align-content: center;
       }
     }
 
@@ -214,6 +222,33 @@ form {
     }
   }
 }
+
+$translucent-form-overlay-max-width: 500px;
+
+.translucent-form-overlay {
+  max-width: $translucent-form-overlay-max-width;
+  width: 100%;
+  background-color: rgba(54, 54, 54, 0.8);
+  padding: 20px;
+  color: $white;
+  
+
+  // workaround 6.3.0 bug
+  .columns.row {
+    display: block;
+  }
+
+  h3, label {
+    color: $white;
+  }
+  input, select {
+    color: $dark-gray;
+  }
+  input::placeholder {
+    color: $dark-gray;
+  }
+}
+
 
 // this is for the user cards
 $card-user-container-margin-bottom: 1rem;
