@@ -10,9 +10,9 @@
     <h2>Top Destinations</h2>
     <p>Start planning your travels here with the latest deals for popular destinations.</p>
         <div class="search-bar">
-      <%= form_tag(cities_path) do %>
-      Name <%= text_field_tag :name %>
-      <%= submit_tag 'Search' %>
+      <%= form_tag(cities_path, method: :get) do %>
+     Search Cities <%= text_field_tag :name, params[:name] %>
+      <%= submit_tag 'Search', name: nil%>
       <% end %>
     </div>
 
