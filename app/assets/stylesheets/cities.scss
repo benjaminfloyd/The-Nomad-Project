@@ -47,13 +47,13 @@ $hero-height: 60vh;
     display: flex;
     margin: 0px;
     justify-content: center;
-    align-items: center;
+    align-items: right;
 }
 
 .city-header {
   display: flex;
-  justify-content: space-between;
-  margin: 0 20px;
+  justify-content: space-around;
+  margin: 0 20px;  
 }
 
 .hero-section {
@@ -71,6 +71,7 @@ $hero-height: 60vh;
     text-shadow: 1px 1px 2px black;
   }
 }
+
 // Nav Bar
 
 #logo{
@@ -503,3 +504,4 @@ $travel-feature-card-header-background-color: #56524b;
 
   }
 }
+
