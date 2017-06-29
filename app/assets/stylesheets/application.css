@@ -20,3 +20,7 @@
 .current-user {
     color: rgba(255,255,255,.7)
 }
+
+a { 
+    color: inherit; 
+}
