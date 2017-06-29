@@ -7,6 +7,13 @@
 
 $hero-height: 60vh;
 
+// #static-nav {
+//   position: fixed;
+//   width: 100vw;
+//   left: 0px;
+//   top: 0px;
+// }
+
 .post {
   padding: 10px;
   margin: 10px;
@@ -215,16 +222,15 @@ $card-user-container-color: $black;
 $card-user-container-image-size: rem-calc(190);
 
 .card-user-container {
-  // margin-bottom: $card-user-container-margin-bottom;
-  // background-color: $card-user-container-background;
-  // overflow: hidden;
-  // padding: 0;
-  // border-radius: $card-user-container-radius;
+  text-align: center;
+  overflow: hidden;
+  padding: 0;
   position: fixed;
   left: 0px;
-  top: 100px;
+  top: 125px;
   padding: 15px;
-  width: 15vw; 
+  width: 20vw; 
+  padding-bottom: 20px;
 
   .card-user-avatar {
     .user-image {
@@ -286,7 +292,7 @@ $card-user-container-image-size: rem-calc(190);
 }
 
 #user-show-posts {
-  width: 85vw;
+  width: 80vw;
   float: right;
 }
 
