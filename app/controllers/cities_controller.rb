@@ -1,7 +1,13 @@
 class CitiesController < ApplicationController
 
   def index
-    @cities = City.all
+    if params[:name]
+    @city = City.where('store LIKE ?', "%#{params[:name]}%")
+  else
+    @city = City.all
+  end
+
+
   end
 
   def show
@@ -37,6 +43,7 @@ class CitiesController < ApplicationController
   private
   def city_params
     params.require(:city).permit(:name, :state, :image)
+
   end
 
 end
