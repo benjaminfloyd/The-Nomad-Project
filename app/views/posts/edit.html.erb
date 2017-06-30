@@ -1,35 +1,32 @@
 <div id="edit-post-hero-background">
-<style media="screen">
-  #edit-post-hero-background { background-image: url(<%= @post.img %>); }
-</style>
-    <div class="row translucent-form-overlay" align="center">
-        <%= form_for @post, as: :post, url: city_post_path(@city, @post), method: :patch do |f| %>
-        <% if @post.errors.any? %>
+  <style media="screen">
+    #edit-post-hero-background { background-image: url(<%= @post.img %>); }
+  </style>
+  <div class="columns">
+    <label rows="4"> 
+      <div class="row translucent-form-overlay" align="center">
+        <%= form_for @post, url: {action: "update"} do |f| %>
+          <% if @post.errors.any? %>
             <div id="error_explanation">
-            <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
-
-            <ul>
-            <% @post.errors.full_messages.each do |message| %>
-                <li><%= message %></li>
-            <% end %>
-            </ul>
+              <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
+               <ul>
+               <% @post.errors.full_messages.each do |message| %>
+                 <li><%= message %></li>
+               <% end %>
+               </ul>
             </div>
+          <% end %>  
+            <%= f.text_area( :title, cols: 20, rows: 1)%>
+            <%= f.text_area( :post, cols: 20, rows: 20)%>
+            <%= f.text_field :img%>
+    <div id="edit-form-buttons">        
+            <span><%= f.submit%></span>
         <% end %>
-        <form>
-                <div class="columns">
-                    <label rows="4"> 
-                        <%= f.text_area( :title, cols: 20, rows: 1)%>
-                        <%= f.text_area( :post, cols: 20, rows: 20)%>
-                        <%= f.text_field :img%>
-                        <%= f.submit%>
-                </div>
-                <h4 class = 'cancel-button'><%= link_to 'Cancel', city_post_path(@city, @post), class: 'button' %></h4>
-
-                <%= button_to 'Delete Post', [@city, @post], class: 'alert button', method: :delete, data: { confirm: "About to delete #{@post.title}! Are you sure you want to do this?" } %>
-            </div>
+      
+    <span class = 'cancel-button'><%= link_to 'Cancel', city_post_path(@city, @post), class: 'button' %></span>
+    <span class = 'delete-post-button'><%= button_to 'Delete Post', [@city, @post], class: 'alert button', method: :delete, data: { confirm: "About to delete #{@post.title}! Are you sure you want to do this?" } %><span>
+  </div>
+  </div>
             
-        </form>
-        <% end %>
-
-    </div>
+</div>
 </div>
