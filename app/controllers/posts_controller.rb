@@ -1,8 +1,10 @@
 class PostsController < ApplicationController
+  before_action :authenticate_user!, :except => [:show, :index]
+  load_and_authorize_resource  only: [:edit, :update, :destroy]
+
 	def index
     @post = Post.all
   end
-
 
   def new
     @city = City.find(params[:city_id])

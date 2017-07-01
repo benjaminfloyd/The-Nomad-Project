@@ -14,8 +14,9 @@
   
   <p><input type="submit" class="button expanded" value="Log in"></input></p>
    <% if devise_mapping.rememberable? -%>
-    <div class="field">
+    <div class="field" id='remember-me'>
       <%= f.check_box :remember_me %>
+      <span id='not-a-member'><%= link_to "Not A Member?", new_user_registration_path %></span>
   <% end -%>
 </form>
 <div class="actions">

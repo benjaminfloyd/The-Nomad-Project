@@ -8,4 +8,18 @@ class ApplicationController < ActionController::Base
             devise_parameter_sanitizer.permit(:sign_up) { |u| u.permit(:name, :email, :password, :full_name, :current_city, :image) }
             devise_parameter_sanitizer.permit(:account_update) { |u| u.permit(:name, :email, :password, :current_password, :full_name, :current_city, :image) }
         end
+
+        include CanCan::ControllerAdditions
+
+  rescue_from CanCan::AccessDenied do |exception|
+    flash[:notice] = "Sorry, you cannot modify another user's content."
+    flash.keep(:notice)
+    redirect_to root_url
+  end
+
+
+  def home
+    render 'cities/home'
+  end
+
 end

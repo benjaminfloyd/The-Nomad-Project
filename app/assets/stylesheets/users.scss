@@ -44,5 +44,21 @@ align-items:left;
 	display:flex;
 	justify-content:center;
 }
+#not-a-member{
+	font-size: 13px;
+	margin-left: 5px;
+	font-weight: 500;
 
+	a{
+		color: black;
+	}
+}
+
+#remember-me {
+	text-align: center;
+
+	label{
+	display: inline;
+  }
+}
 
