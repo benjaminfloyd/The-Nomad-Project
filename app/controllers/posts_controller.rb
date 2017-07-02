@@ -67,8 +67,3 @@ private
   end
 
 end
-
-#  def self.listing(page)
-#     order(created_at: :desc).page(params[:page]).per(20)
-#   end
-# end
