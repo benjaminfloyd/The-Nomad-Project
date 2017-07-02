@@ -67,7 +67,7 @@
 #login-logo{
     
   background-size: cover;
-  height: $hero-height;
+  height: 60vh;
   text-align: center;
   display: flex;
   align-items: center;
