@@ -1,12 +1,9 @@
-<nav class="top-bar topbar-responsive" id='static-nav'>
-  <div id="top-bar-title" class="top-bar-title">
-    
-       <div id="top-bar-logo"class="topbar-responsive-logo" ><%= image_tag 'logo/nomad_compass.png',style: 'height:90px;width:auto;' %></div>
-  </div>
-  <div id="topbar-responsive" class="topbar-responsive-links">
-    <div id="top-bar-right" class="top-bar-right">
-      <ul class="menu simple vertical medium-horizontal">
-         <li><%= link_to "Home", root_path %></li>
+
+<!-- medium and larger nav bar -->
+<div class="top-bar topbar-center-logo" id="topbar-center-logo">
+  <div class="top-bar-left" id: 'nav-bar-left'>
+    <ul class="menu vertical medium-horizontal">
+      <li><%= link_to "Home", root_path %></li>
         <% if user_signed_in? %>
         <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
         <li><%= link_to current_user.full_name, user_path(current_user.id) %></li>
@@ -14,7 +11,23 @@
         <li><%= link_to "Sign Up", new_user_registration_path %></li>
         <li><%= link_to "Log In", new_user_session_path %></li>
         <% end %>
-      </ul>
-    </div>
+    </ul>
   </div>
-</nav>
+  <div class="top-bar-center">
+   <%= image_tag 'logo/nomad_compass_full.png' %>
+  </div>
+</div>
+<!-- /medium and larger nav bar -->
+
+<!-- mobile nav bar -->
+
+<div class="title-bar topbar-center-logo-mobile" data-responsive-toggle="topbar-center-logo" data-hide-for="medium">
+  <div class="title-bar-left">
+    <div class="title-bar-title"><%= image_tag 'logo/nomad_compass_full.png' %></div>
+  </div>
+  <div class="title-bar-right">
+    <button class="menu-icon" type="button" data-toggle="topbar-center-logo"></button>
+  </div>
+</div>
+<!-- /mobile nav bar -->
+

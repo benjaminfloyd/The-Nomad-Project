@@ -51,3 +51,8 @@
 //
 @include motion-ui-transitions;
 @include motion-ui-animations;
+
+//override bav bar
+.top-bar-left {
+  float: right;
+}
