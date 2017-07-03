@@ -5,7 +5,7 @@
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="field">
 <form class="log-in-form">
-  <h4 class="text-center">Log in with you email account</h4>
+  <h4 class="text-center", id='login-message'>Log in with your email account</h4>
 
     <%= f.email_field :email, autofocus: true %>
 
