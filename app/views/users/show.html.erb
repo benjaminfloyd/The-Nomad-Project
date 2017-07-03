@@ -1,30 +1,37 @@
 
 <%= render :partial => 'partials/user' %>
 
-<div class = 'center'>
 <div id='user-show-posts', class='center'>
 <div id='user-show-center'>
 <div class="travel-feature-card-details">
+<h5 class="travel-feature-card-title"><%= current_user.full_name %>'s Posts</h5>
+<br>
 <% current_user.posts.order(created_at: :desc).each do |post|%>
 	<%= link_to(city_post_path(post.city_id, post.id)) do %>
-    <div class="row">
+    <div class="row", id='user-show-row'>
       <div class="small-12 medium-12 columns travel-feature-card-content">
         <div class="row, center">
-          <div class="small-12 medium-12 columns">
+          <div class="small-12 medium-12 columns", 'flex'>
            <%= image_tag post.img, :class => 'user-post-image' %>
-          </div>
+					</div>
           <div class="small-12 medium-12 columns">
             <h6 class="travel-feature-card-title"><%= post.title %></h6>
-						<p class='post-date'>Posted: <%= post.updated_at %></p>
+						<p class='post-date'>Posted: <%= time_ago_in_words(post.created_at) %> ago</p>
 						<div class="user-show-post">
-            <p><%= post.post %></p>
+            <p class='post-post'><%= post.post %></p>
 						</div>
+					 <div id='user-post-flex'>
+					 <%= link_to 'Edit', edit_city_post_path(@city=post.city_id, @post=post.id), :class => 'post-date'%>
+					 <%= link_to 'Delete', city_post_path(@city=post.city_id, @post=post.id), :class => 'post-date', method: :delete, data: { confirm: "About to delete #{post.title}! Are you sure you want to do this?" } %>
+          </div>
+					________________________
+					<br>
+					<br>
           </div>
         </div> 
       </div>
 			<% end %>
 			<% end %>
 		</div>
-</div>
 
 

@@ -5,6 +5,10 @@
 // Helpers
 @import "_settings";
 
+.flex {
+  display: flex;
+}
+
 .post {
   padding: 10px;
   margin: 10px;
@@ -644,4 +648,40 @@ $full-width-testimonial-vertical-padding: 2rem;
   padding: 0px;
   margin: 0px;
   color: black;
+}
+.created-and-buttons-inline {
+  display: inline;
+}
+
+#user-post-flex {
+  display: block;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.post-post {
+  margin: 0px;
+}
+
+@media (max-width: 550px) {
+
+.card-user-container {
+  width: 100vw;
+  
+}
+#user-show-posts {
+  width: 100vw;
+  margin: 5vw;
+}
+#user-show-center {
+   width: 100vw;
+}
+
+html {
+  text-align: center;
+}
+
+#user-show-row {
+  width: 100vw;
+}
 }
