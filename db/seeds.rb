@@ -5,9 +5,9 @@ user1 = User.create(email: 'user1@user.com', password: '123456', full_name: 'Cla
 user2 = User.create(email: 'user2@user.com', password: '123456', full_name: 'Bruce Banner', current_city: 'Atlanta', image: 'https://pbs.twimg.com/profile_images/448409779153547264/pARLjjG2.jpeg' )
 
 atlanta = City.create(name: 'Atlanta', state: 'Georgia', image: 'http://i.huffpost.com/gen/1716876/images/o-ATLANTA-TRAFFIC-facebook.jpg')
-sanfrancisco = City.create(name: 'San Francisco', state: 'California', image: 'https://unsplash.it/600/440?image=693')
-lasvegas = City.create(name: 'Las Vegas', state: 'Nevada', image: 'https://unsplash.it/600/440?image=452')
-london = City.create(name: 'London', state: 'England', image: 'http://www.marketplaceweddings.com/blog/wp-content/uploads/2013/10/london-romantic-honeymoon.jpg')
+sanfrancisco = City.create(name: 'San Francisco', state: 'California', image: 'http://www.mckinsey.com/~/media/McKinsey/Locations/North%20America/West%20Coast/San%20Francisco/WCO_SanFrancisco_hero_GettyImages-476881195_1536x768_crop-left_2.ashx?mw=1536&car=546:205&cpx=Left&cpy=Center')
+lasvegas = City.create(name: 'Las Vegas', state: 'Nevada', image: 'http://i.huffpost.com/gen/2702814/images/o-LAS-VEGAS-facebook.jpg')
+london = City.create(name: 'London', state: 'England', image: 'http://www.gdcc.com/wp-content/uploads/2013/12/2-London.jpg')
 
 Post.create(title: "Tour The Georgia Aquarium", post: "If you're in Atlanta you should go to the Georgia Aquarium. It's amazing!! And if you go splurge for the behind the scenes tour. You get to see the aquarium from behind the scenes, and you won't ever forget the experience!", city_id: atlanta.id, user_id: user1.id, img: "https://www.georgiaaquarium.org/images/default-source/default-album/bts-411x411-logoa4fec313cabb6b4c8326ff00008b2be6.png?sfvrsn=1")
 Post.create(title: "Atlanta Southern Food Tour", post: "Your Atlanta food tour takes you off-the-beaten path to Atlanta's historic downtown neighborhoods to try 15 mouth-watering tastings from 7 restaurants and food shops. The 3.5 hour small group tour will introduce you to the history and diversity of Southern food as you try soul food, barbecue, Lowcountry cuisine, Creole-style candies, and today’s newest Southern specialties.", city_id: atlanta.id, user_id: user1.id, img:"http://www.bravotv.com/sites/nbcubravotv/files/styles/blog-post--mobile/public/field_blog_image/2016/05/the-feast-southern-foods-up-north-promote.jpg?itok=EbxPL6N2&timestamp=1464191684")

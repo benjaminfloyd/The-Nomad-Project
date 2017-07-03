@@ -16,13 +16,14 @@
         <div class="row, center">
           <div class="small-12 medium-12 columns", 'flex'>
            <%= image_tag post.img, :class => 'city-post-image' %>
+          <p> </p>
 					</div>
           <div class="small-12 medium-12 columns">
-						<p class='post-date'>Posted: <%= time_ago_in_words(post.created_at) %> ago by <%= post.user.full_name %></p>
 						<div class="user-show-post">
             <p class='post-post'><%= post.post %></p>
 						</div>
           </div>
+						<p class='post-date'>Posted: <%= time_ago_in_words(post.created_at) %> ago by <%= post.user.full_name %></p>
 			<% end %>
       <hr>
 			<% end %>

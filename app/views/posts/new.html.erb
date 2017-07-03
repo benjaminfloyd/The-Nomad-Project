@@ -22,6 +22,7 @@
                         <%= f.text_area( :post, cols: 20, rows: 20)%>
                         <%= f.text_field :img%>
                         <%= f.submit%>
+                        <span class = 'cancel-button'><%= link_to 'Cancel', city_path(@city, @post), class: 'button' %></span>
                 </div>
             </div>
         </form>

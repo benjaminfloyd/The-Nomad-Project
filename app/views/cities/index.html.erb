@@ -1,18 +1,18 @@
 
 <div class="hero-section">
   <div class="hero-section-text">
-      <div class='title'><%= image_tag "logo/Nomad_Compass_Full_Tag.png" ,style: 'height:250px;width:auto;'%></div>
+      <div class='title'><%= image_tag "logo/Nomad_Compass_Full_Tag.png" ,style: 'max-height:250px;width:auto;'%></div>
     <h5 class='quote'></h5>
   </div>
 </div>
 
 <div class="featured-image-block-grid, center">
-    <h2>Top Destinations</h2>
-    <p>Start planning your travels here with the latest deals for popular destinations.</p>
+    <h3 id='top-destinations'>Top Destinations</h3>
+    <p>Start planning your travels here with the latest information for popular destinations.</p>
         <div class="search-bar">
-      <%= form_tag(cities_path, method: :get) do %>
+      <!--<%= form_tag(cities_path, method: :get) do %>
      Search Cities <%= text_field_tag :name, params[:name] %>
-      <% end %>
+      <% end %> -->
     </div>
 
   <div class="row large-up-4 small-up-2">
