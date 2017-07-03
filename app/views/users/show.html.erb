@@ -1,45 +1,30 @@
 
 <%= render :partial => 'partials/user' %>
 
-
+<div class = 'center'>
 <div id='user-show-posts', class='center'>
 <div id='user-show-center'>
-	<div class='post-wrapper, center'>
-		<div class="posts-panel">
-			<header class="panel-header">
-				<h1 class="panel-title"><%= current_user.full_name %>'s Posts</h1>
-			</header>
-			<% current_user.posts.order(created_at: :desc).each do |post|%>
-				<%= link_to(city_post_path(post.city_id, post.id)) do %>
-					<div class="post-item">
-						<div>
-							<%= image_tag post.img %>
-							<div class="post-text">
-								<h4 class="post-title">Post Title: <%=post.title%></h4>
-								<div class="post-meta">
-									<span class="meta"><span class="meta-icon fa fa-user-circle-o" aria-hidden="true"></span><%= post.user.full_name %></span>
-									<span class="meta"><span class="meta-icon fa fa-clock-o" aria-hidden="true"></span><span class="meta-text">posted at <%=post.created_at%></span></span>
-								</div>
-								<div class="post-summary">
-									<p>Post Content: <%= post.post %></p>
-								</div>
-							</div>
+<div class="travel-feature-card-details">
+<% current_user.posts.order(created_at: :desc).each do |post|%>
+	<%= link_to(city_post_path(post.city_id, post.id)) do %>
+    <div class="row">
+      <div class="small-12 medium-12 columns travel-feature-card-content">
+        <div class="row, center">
+          <div class="small-12 medium-12 columns">
+           <%= image_tag post.img, :class => 'user-post-image' %>
+          </div>
+          <div class="small-12 medium-12 columns">
+            <h6 class="travel-feature-card-title"><%= post.title %></h6>
+						<p class='post-date'>Posted: <%= post.updated_at %></p>
+						<div class="user-show-post">
+            <p><%= post.post %></p>
 						</div>
-						<div id='post-glyph'>
-							<h5 id='user-edit-post-button'><%= link_to link_to image_tag("https://image.flaticon.com/icons/png/128/34/34022.png"), edit_city_post_path(@city=post.city_id, @post=post.id)%></h5>
-							<h5 id='user-delete-post-button'><%= link_to image_tag("https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-trash-a-128.png"), city_post_path(@city=post.city_id, @post=post.id), method: :delete, data: { confirm: "About to delete #{post.title}! Are you sure you want to do this?" } %></h5>
-						</div>
-					</div>
-				<% end %>
-				<hr>
+          </div>
+        </div> 
+      </div>
+			<% end %>
 			<% end %>
 		</div>
-	</div>
-
-</div>
 </div>
 
-
-</div>
-</div>
 
