@@ -2,12 +2,15 @@
 <p></p>
 <br>
 <div class='center'>
-<h2><%= @post.title %></h2>
+<h2 id='post-show-title'><%= @post.title %></h2>
 <br>
+<div class='post-show-container'>
 <%= image_tag @post.img, :class => 'post-image' %>
 <br>
-<p><%= @post.post %></p>
+<p id='post-show-content'><%= @post.post %></p>
 <% if @post.user == current_user %>
 <h4 class = 'edit-post-button'><%= link_to 'Edit Post', edit_city_post_path(@city = @post.city_id, @post), class: 'button' %></h4>        
 <% end %>
+<h6>Article written by <%= @post.user.full_name %> | <%= time_ago_in_words(@post.created_at) %> ago.</h6>
+</div>
 </div>

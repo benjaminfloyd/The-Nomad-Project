@@ -7,6 +7,7 @@
   <!--user info name, bio and location-->
   <div class="card-user-bio">
     <h4><%= current_user.full_name %></h4>
+    <p>Email: <%= current_user.email %></p>
     <p>Member Since: <%= current_user.created_at.strftime("%B %-d, %Y") %></p>
     <p>Current City: <%= current_user.current_city %></p>
   <h4 class = 'edit-user-button'><%= link_to 'Edit User', edit_user_registration_path(@current_user), class: 'button' %></h4>

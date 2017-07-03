@@ -1,34 +1,33 @@
 <div class='city-header'>
  <h2 class='center, city-name'>The City of <%= @city.name %>, <%= @city.state %></h2>
- <p><%= link_to 'New Post', new_city_post_path(@city), class: 'button, new-post-button' %></p>
+ <%= link_to 'New Post', new_city_post_path(@city), class: 'button', id: 'new-post-button' %>
  </div>
  <div class='city-image, center'>
 <%= image_tag @city.image %>
 </div>
 
-<% @city.posts.each do |post|%>
-  <div class="travel-feature-card-details">
-	<%= link_to(city_post_path(post.city_id, post.id)) do %>
-    <div class="row">
-      <div class="small-12 medium-9 columns travel-feature-card-content">
-        <div class="row">
-          <div class="small-4 medium-2 columns">
-           <%= image_tag post.img %>
-          </div>
-          <div class="small-8 medium-10 columns">
-            <h6 class="travel-feature-card-title"><%= post.title %></h6>
-            <p><%= post.post %></p>
-          </div>
-        </div> 
-      </div>
 
-      <div class="small-12 medium-3 columns travel-feature-card-price, center">
-        <h6> <%= post.user.full_name %></h6>
-        <p class="travel-feature-card-price-subtext" id='cities-user-info'><%=post.user.created_at %></p>
-      </div>
-    </div> 
-  </div>
-</div>
-<% end %>
-<% end %>
+<div class="city-card-details">
+<% @city.posts.order(created_at: :desc).each do |post|%>
+	<%= link_to(city_post_path(post.city_id, post.id)) do %>
+    <div class="row", id='user-show-row'>
+      <div class="small-12 medium-12 columns travel-feature-card-content">
+<span class='center'><h6 class="travel-feature-card-title"><%= post.title %></h6></span>
+        <div class="row, center">
+          <div class="small-12 medium-12 columns", 'flex'>
+           <%= image_tag post.img, :class => 'city-post-image' %>
+					</div>
+          <div class="small-12 medium-12 columns">
+						<p class='post-date'>Posted: <%= time_ago_in_words(post.created_at) %> ago by <%= post.user.full_name %></p>
+						<div class="user-show-post">
+            <p class='post-post'><%= post.post %></p>
+						</div>
+          </div>
+			<% end %>
+      <hr>
+			<% end %>
+		</div>
+
+
+
 

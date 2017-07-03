@@ -332,9 +332,15 @@ $travel-feature-card-header-background-color: #56524b;
 
 .travel-feature-card-content {
   @include breakpoint(small only) {
-    padding-bottom: 15px;
+    padding-top: 20px;
+    margin-top: 15px;
     border-bottom: 1px solid $medium-gray;
   }
+
+.travel-feature-card-title {
+  margin: 15px;
+}
+
 }
 .travel-feature-card-price {
   text-align: right;
@@ -400,7 +406,12 @@ $travel-feature-card-header-background-color: #56524b;
 }
 
 #user-show-center {
-   width: 75vw;
+  margin: 20px 0px;
+  margin-right: 10px;
+  width: 65vw;
+  background-color: rgba(0,0,0,.05);
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+   
 }
 
 #post-glyph {
@@ -663,6 +674,47 @@ $full-width-testimonial-vertical-padding: 2rem;
   margin: 0px;
 }
 
+.city-post-image {
+  width: 100%;
+  height: 100%;
+  max-width:600px;
+  max-height:440px;
+}
+
+#new-post-button {
+  margin: 0px;
+}
+
+#usernames-posts {
+  margin-top: 20px;
+  font-size: 30px;
+}
+
+.city-card-details {
+  margin: 20px;
+  background-color: rgba(0,0,0,.05);
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+
+.post-show-container {
+  background-color: rgba(0,0,0,.05);
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  margin: 0 10vw 5vw 10vw;
+  padding: 20px;
+  padding-top: 40px;
+}
+
+#post-show-content {
+  margin-top: 10px;
+  padding: 0 10px;
+}
+
+#post-show-title {
+  margin: 0px;
+}
+
+//GENERAL MEDIA QUERIES
+
 @media (max-width: 550px) {
 
 .card-user-container {
@@ -670,7 +722,7 @@ $full-width-testimonial-vertical-padding: 2rem;
   
 }
 #user-show-posts {
-  width: 100vw;
+  width: 90vw;
   margin: 5vw;
 }
 #user-show-center {
@@ -684,4 +736,14 @@ html {
 #user-show-row {
   width: 100vw;
 }
+}
+
+@media (max-width: 700px) {
+
+#new-post-button {
+  margin: 0px;
+  padding: 5px;
+  font-size: 11px;
+}
+
 }
