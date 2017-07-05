@@ -8,26 +8,29 @@
 
 
 <div class="city-card-details">
-<% @city.posts.order(created_at: :desc).each do |post|%>
-	<%= link_to(city_post_path(post.city_id, post.id)) do %>
-    <div class="row", id='user-show-row'>
-      <div class="small-12 medium-12 columns travel-feature-card-content">
-<span class='center'><h6 class="travel-feature-card-title"><%= post.title %></h6></span>
-        <div class="row, center">
-          <div class="small-12 medium-12 columns", 'flex'>
-           <%= image_tag post.img, :class => 'city-post-image' %>
-          <p> </p>
-					</div>
-          <div class="small-12 medium-12 columns">
-						<div class="user-show-post">
-            <p class='post-post'><%= post.post %></p>
-						</div>
-          </div>
+  <% @city.posts.order(created_at: :desc).each do |post|%>
+	  <%= link_to(city_post_path(post.city_id, post.id)) do %>
+      <div class="row", id='user-show-row'>
+        <div class="small-12 medium-12 columns travel-feature-card-content">
+          <span class='center'><h6 class="travel-feature-card-title"><%= post.title %></h6></span>
+          <div class="row, center">
+            <div class="small-12 medium-12 columns", 'flex'>
+              <%= image_tag post.img, :class => 'city-post-image' %>
+              <p> </p>
+					  </div>
+            <div class="small-12 medium-12 columns">
+						  <div class="user-show-post">
+                <p class='post-post'><%= post.post %></p>
+						  </div>
+            </div>
 						<p class='post-date'>Posted: <%= time_ago_in_words(post.created_at) %> ago by <%= post.user.full_name %></p>
-			<% end %>
-      <hr>
-			<% end %>
-		</div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+    <hr>
+  <% end %>
+</div>
 
 
 
