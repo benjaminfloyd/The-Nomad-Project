@@ -5,8 +5,16 @@
 // Helpers
 @import "_settings";
 
+html {
+  height: 100%;
+  text-align: center;
+  overflow: hidden;
+}
+
 body {
-  background-color: rgba(0,0,0,.03);
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,.03);
 }
 
 .flex {
@@ -101,6 +109,7 @@ $topbar-center-logo-bg: #2c3840;
 }
 
 .topbar-center-logo .top-bar-center {
+  display: flex;
   flex: 1 0 auto;
 
   @include breakpoint(small only) {
@@ -728,6 +737,9 @@ $full-width-testimonial-vertical-padding: 2rem;
   margin: 0px;
   padding: 5px;
   font-size: 11px;
+  }
+  #hero-background {
+    padding: 0px;
   }
 }
 

@@ -23,8 +23,8 @@
 
 
 #hero-background {
-    height: 1000px;
-    background-image: url(http://lorempixel.com/output/city-q-c-1200-700-9.jpg);
+    height: 100%;
+    background-image: url(http://www.hdnicewallpapers.com/Walls/Big/Bridge/Popular_Golden_Gate_Bridge_in_San_Francisco_California_HD_Desktop_Background_Wallpaper.jpg);
     background-size: cover;
     color: #fefefe;
     padding: 40px 0;
@@ -55,7 +55,7 @@
 }
 
 #login-hero-background {
-    height: 750px;
+    height: 100%;
     background-image: url("http://hdqwalls.com/wallpapers/airplane-wings.jpg");
     background-size: cover;
     color: rgba(255,255,255,1);
