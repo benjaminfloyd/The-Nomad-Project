@@ -1,3 +1,10 @@
+• To run locally clone this repository and open location in your terminal.  
+• Run bundle install in the terminal
+• in the terminal run rails db:setup  
+• run rails db:migrate    
+• run rails s  
+• open http://localhost:3000/ in your browser  
+
 # [Nomad](https://urban-nomad.herokuapp.com/) - See it live
 
 A travel site for users to share tips about their favorite locations around the world.
